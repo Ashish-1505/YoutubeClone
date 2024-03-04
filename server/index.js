@@ -15,9 +15,9 @@ app.use(express.json({limit:"30mb",extended:true}))
 app.use(express.urlencoded({limit:"30mb",extended:true}))
 app.use('/uploads',express.static(path.join('uploads')))
 
-// app.get('/',(req,res)=>{ 
-//     res.send("hello") 
-// }) 
+app.get('/',(req,res)=>{ 
+    res.send("hello") 
+}) 
  
 app.use(bodyParser.json()) 
  
@@ -26,18 +26,18 @@ app.use('/video',videoRoutes)
 app.use('/comment',commentsRoutes)
 
 
-const __dirname1=path.resolve(); 
-if(process.env.NODE_ENV==='production'){
-    app.use(express.static(path.join(__dirname1,"/my-app/build")))
+// const __dirname1=path.resolve(); 
+// if(process.env.NODE_ENV==='production'){
+//     app.use(express.static(path.join(__dirname1,"/my-app/build")))
 
-    app.get('*',(req,res)=>{
-        res.sendFile(path.resolve(__dirname1,"my-app","build","index.html"))
-    })
-}else{
-    app.get('/',(req,res)=>{
-        res.send("API is Running");
-    })
-}
+//     app.get('*',(req,res)=>{
+//         res.sendFile(path.resolve(__dirname1,"my-app","build","index.html"))
+//     })
+// }else{
+//     app.get('/',(req,res)=>{
+//         res.send("API is Running");
+//     })
+// }
  
 const PORT=process.env.PORT
        
