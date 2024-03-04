@@ -4,21 +4,21 @@ module.exports = function(app) {
   app.use(
     '/user',
     createProxyMiddleware({
-      target: 'http://localhost:5000',
+      target: 'https://youtubeclonebackend.onrender.com',
       changeOrigin: true,
     })
   ),
   app.use(
     '/video',
     createProxyMiddleware({
-      target: 'http://localhost:5000',
+      target: 'https://youtubeclonebackend.onrender.com',
       changeOrigin: true,
     })
   ),
   app.use(
     '/comment',
     createProxyMiddleware({
-      target: 'http://localhost:5000',
+      target: 'https://youtubeclonebackend.onrender.com',
       changeOrigin: true,
     })
   )
