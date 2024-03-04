@@ -33,7 +33,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm --force i && npm run build",
+    "build": "react-scripts build",
+    "production":"npm --force install && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
