@@ -3,8 +3,8 @@ import  users from '../models/auth.js'
 import Otp from '../models/Otp.js'
 import bcrypt from 'bcryptjs';
 import twilio from "twilio"
-const accountSid = 'AC0f9d173374f9f78123ec9c7e4a27fa26';
-const authToken = '126588b12c17dd9c9ada3e47aa682987';
+const accountSid = process.env.Sid;
+const authToken = process.env.client;
 const client = new twilio(accountSid, authToken);
 
 export const login = async(req,res)=>{
